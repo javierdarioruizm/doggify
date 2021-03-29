@@ -25,6 +25,7 @@ router.get('/', checkToken, async (req, res) => {
 
 
 
+
 // Método para mostrar los favoritos de un usuario por página
 
 router.get('/pagina/:idPagina', checkToken, async (req, res) => {
@@ -128,7 +129,6 @@ router.get('/:idLugar', async (req, res) => {
 
 
 
-
 // Método para añadir un lugar a favoritos
 
 router.post('/:idLugar', checkToken, async (req, res) => {
@@ -142,7 +142,6 @@ router.post('/:idLugar', checkToken, async (req, res) => {
         res.status(422).json({ error: error.message });
     }
 });
-
 
 
 
