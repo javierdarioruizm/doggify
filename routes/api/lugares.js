@@ -7,9 +7,8 @@ const multer = require('multer');
 const upload = multer({ dest: 'public/images' });
 const fs = require('fs');
 
-// const Lugar = require('../../models/lugar');
 
-// Uso de Mulder para la imagen
+// Uso de Multer para la imagen
 
 router.post('/', upload.single('imagenes'), async (req, res) => {
 
@@ -157,16 +156,7 @@ router.get('/:idLugar', async (req, res) => {
     }
 });
 
-// Método para crear un nuevo lugar
 
-// router.post('/', async (req, res) => {
-//     try {
-//         const result = await createNew(req.body);
-//         res.json(result);
-//     } catch (error) {
-//         res.status(422).json({ error: error.message });
-//     }
-// });
 
 
 // Método para actualizar un lugar
