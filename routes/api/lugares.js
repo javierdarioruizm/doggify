@@ -161,12 +161,14 @@ router.get('/:idLugar', async (req, res) => {
 
 // Método para actualizar un lugar
 
-router.put('/:idLugar', async (req, res) => {
+router.put('/edit', async (req, res) => {
+    console.log(req.body)
     try {
         const result = await updateById(req.body);
         res.json(result);
     } catch (error) {
-        res.status(422).json({ error: error.message });
+        console.log(error)
+        res.json({ error: error.message });
     }
 });
 

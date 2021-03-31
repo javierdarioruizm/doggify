@@ -69,9 +69,9 @@ const createNew = ({ nombre, apellidos, direccion, codigo_postal, poblacion, pro
 
 // Método para editar un usuario
 
-const updateById = ({ id, nombre, apellidos, direccion, codigo_postal, poblacion, provincia, pais, telefono, email, foto, password }) => {
+const updateById = (id, { nombre, apellidos, direccion, codigo_postal, poblacion, provincia, pais, email, telefono, password }) => {
     return new Promise((resolve, reject) => {
-        db.query('UPDATE usuarios SET nombre= ?, apellidos= ?, direccionv, codigo_postal= ?, poblacion= ?, provincia= ?, pais= ?, telefono= ?, email= ?, foto= ?, password= ? WHERE id = ?', [nombre, apellidos, direccion, codigo_postal, poblacion, provincia, pais, telefono, email, foto, password, id], (err, result) => {
+        db.query('UPDATE usuarios SET nombre= ?, apellidos= ?, direccion= ?, codigo_postal= ?, poblacion= ?, provincia= ?, pais= ?,  email= ?, telefono= ?, password= ? WHERE id = ?', [nombre, apellidos, direccion, codigo_postal, poblacion, provincia, pais, email, telefono, password, id], (err, result) => {
             if (err) return reject(err);
             resolve(result);
         })

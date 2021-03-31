@@ -135,7 +135,7 @@ const createNew = ({ nombre, direccion, poblacion, codigo_postal, provincia, pai
 
 const updateById = ({ id, nombre, direccion, codigo_postal, poblacion, provincia, pais, latitud, longitud, telefono, email, horario, categoria, sitio_web, descripcion }) => {
     return new Promise((resolve, reject) => {
-        db.query('UPDATE lugares SET nombre = ?, direccion= ? , codigo_postal= ? , poblacion= ? , provincia= ? , pais= ? , latitud= ? , longitud= ? , telefono= ? , email= ? , horario= ? , categoriav, sitio_web= ? , descripcion= ? WHERE id = ?', [nombre, direccion, codigo_postal, poblacion, provincia, pais, latitud, lonfitud, telefono, email, horario, categoria, sitio_web, descripcion, id], (err, result) => {
+        db.query('UPDATE lugares SET nombre = ?, direccion= ? , codigo_postal= ? , poblacion= ? , provincia= ? , pais= ? , latitud= ? , longitud= ? , telefono= ? , email= ? , horario= ? , categoria= ?, sitio_web= ? , descripcion= ? WHERE id = ?', [nombre, direccion, codigo_postal, poblacion, provincia, pais, latitud, longitud, telefono, email, horario, categoria, sitio_web, descripcion, id], (err, result) => {
             if (err) return reject(err);
             resolve(result);
         })

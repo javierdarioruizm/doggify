@@ -82,9 +82,10 @@ function createToken(pUser) {
 
 // Método para actualizar un usuario
 
-router.put('/:idUsuario', checkToken, async (req, res) => {
+router.put('/edit', checkToken, async (req, res) => {
     try {
-        const result = await updateById(req.body);
+        console.log('edicionUsuario', req.userId, req.body)
+        const result = await updateById(req.userId, req.body);
         res.json(result);
     } catch (error) {
         res.status(422).json({ error: error.message });
